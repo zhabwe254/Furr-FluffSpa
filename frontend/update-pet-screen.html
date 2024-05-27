@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            background-color: #e6f7ff; /* pale blue */
+            padding: 50px 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007BFF; /* dull blue */
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            text-align: left;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF; /* dull blue */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="update-pet-screen">
+        <h2>Update Pet</h2>
+        <form id="update-pet-form">
+            <div class="mb-3">
+                <label for="update-pet-name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="update-pet-name" required>
+            </div>
+            <div class="mb-3">
+                <label for="update-pet-species" class="form-label">Species</label>
+                <input type="text" class="form-control" id="update-pet-species" required>
+            </div>
+            <div class="mb-3">
+                <label for="update-pet-age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="update-pet-age" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Pet</button>
+        </form>
+    </div>
+</body>
+</html>
