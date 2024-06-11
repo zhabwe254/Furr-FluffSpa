@@ -1,172 +1,61 @@
-/* General styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #f7f7f7;
-}
-
-/* Header styles */
-header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header .logo img {
-    height: 50px;
-}
-
-nav ul {
-    list-style: none;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    display: flex;
 }
 
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #007BFF;
-}
-
-/* Main content styles */
-main {
-    padding: 20px;
-}
-
-/* Form styles */
-form {
+.container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-    margin: 20px auto;
-}
-
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-form input,
-form select,
-form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-form button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #0056b3;
-}
-
-/* About and contact page styles */
-.about, .contact {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 20px auto;
-}
-
-.about h2, .contact h2 {
-    color: #007BFF;
-}
-
-.about p, .contact p {
-    line-height: 1.6;
-}
-
-/* Success message styles */
-.success-message {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 20px auto;
     text-align: center;
 }
 
-/* Appointments, customers, inventory pages styles */
-.table-container {
-    max-width: 1000px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.logo {
+    width: 100px; /* Adjust this value based on the original size of your logo */
+    height: auto;
 }
 
-table, th, td {
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: #007BFF;
+button {
+    padding: 10px;
+    background-color: #007bff;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    form, .about, .contact, .success-message, .table-container {
-        padding: 10px;
-        margin: 10px;
-    }
-
-    form input, form select, form textarea, form button {
-        padding: 8px;
-    }
+button:hover {
+    background-color: #0056b3;
 }
