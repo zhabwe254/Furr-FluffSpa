@@ -1,98 +1,124 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  text-align: center; /* Center align text */
 }
 
-.container {
-    background-color: #e6f7ff; /* Pale blue */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    width: 100%;
-    text-align: center;
+header {
+  background-color: #ff69b4; /* Pink */
+  color: paleblue; /* Pale blue */
+  padding: 10px 0;
 }
 
-.logo-container {
-    text-align: center;
-    margin-bottom: 20px;
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-    width: 100px; /* Adjusted size to be three times smaller */
-    height: auto;
+header nav ul li {
+  display: inline;
+  margin: 0 15px;
 }
 
-h1 {
-    color: #ffb6c1; /* Pale pink */
+header nav ul li a {
+  color: paleblue; /* Pale blue */
+  text-decoration: none;
 }
 
-p {
-    color: #333;
+.cover-image {
+  background-image: url('/Users/gideonhabwe/alx/Furr-FluffSpa/frontend/images/cover.jpg');
+  background-size: cover;
+  text-align: center;
+  color: white;
+  padding: 100px 0;
 }
 
-nav a {
-    display: inline-block;
-    margin: 10px;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
+.cover-image h1 {
+  font-size: 4em;
+  margin: 0;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.cover-image p {
+  font-size: 1.5em;
 }
 
-.intro-section, .features-section, .about-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.cover-image button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ff69b4; /* Pink */
+  border: none;
+  color: paleblue; /* Pale blue */
+  cursor: pointer;
 }
 
-button {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
+.cover-image button:hover {
+  background-color: #ff1493;
 }
 
-button:hover {
-    background-color: #0056b3;
+#features {
+  background-color: #e6f7ff; /* Pale blue */
+  padding: 50px 20px;
 }
 
-.features-section .feature {
-    margin-top: 20px;
+#features h2 {
+  color: #ff69b4; /* Pink */
 }
 
-.features-section img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 10px;
+.feature {
+  display: inline-block;
+  width: 30%;
+  margin: 10px;
+  vertical-align: top;
 }
 
-.features-section h3 {
-    color: #ffb6c1; /* Pale pink */
+.feature img {
+  max-width: 100%;
 }
 
-.about-section ul {
-    list-style: none;
-    padding: 0;
+#about {
+  background-color: #ffe6f2; /* Pink */
+  padding: 50px 20px;
 }
 
-.about-section li {
-    margin: 10px 0;
+#about h2 {
+  color: #ff69b4; /* Pink */
 }
+
+#about .team {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#about .member {
+  width: 30%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#about .member h3 {
+  margin: 0;
+  color: #0073e6;
+}
+
+#about .member p {
+  color: #ff69b4; /* Pink */
+}
+
+#about .member a {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+footer {
+  background-color: #333;
+  color: paleblue; /* Pale blue */
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 
