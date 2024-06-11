@@ -1,19 +1,21 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
-    margin: 0;
 }
 
 .container {
-    background-color: #fff;
+    background-color: #e6f7ff; /* Pale blue */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    max-width: 900px;
     width: 100%;
     text-align: center;
 }
@@ -24,26 +26,36 @@ body {
 }
 
 .logo {
-    width: 100px; /* Adjust this value based on the original size of your logo */
+    width: 100px; /* Adjusted size to be three times smaller */
     height: auto;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+h1 {
+    color: #ffb6c1; /* Pale pink */
 }
 
-label {
-    margin-top: 10px;
-    margin-bottom: 5px;
+p {
+    color: #333;
+}
+
+nav a {
+    display: inline-block;
+    margin: 10px;
+    color: #007bff;
+    text-decoration: none;
     font-weight: bold;
 }
 
-input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+nav a:hover {
+    text-decoration: underline;
+}
+
+.intro-section, .features-section, .about-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -54,8 +66,33 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 20px;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+.features-section .feature {
+    margin-top: 20px;
+}
+
+.features-section img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.features-section h3 {
+    color: #ffb6c1; /* Pale pink */
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-section li {
+    margin: 10px 0;
 }
