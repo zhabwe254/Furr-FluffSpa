@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "test": "mocha backend/tests/**/*.js --timeout 10000"
+  }
+}
