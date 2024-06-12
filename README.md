@@ -1,6 +1,5 @@
 Furr-FluffSpa
 
-<<<<<<< HEAD
 Furr & Fluff E-Spa is a comprehensive pet management platform designed to streamline the management of pets' health records, appointments, and other related tasks. It provides a user-friendly interface for pet owners and administrators to manage various aspects of pet care.
 
 ## Table of Contents
@@ -37,7 +36,6 @@ To install and run Furr & Fluff E-Spa locally, follow these steps:
 
 1. Clone the repository
 =======
->>>>>>> 7dc1dc1d7ca2130527d361275dee4d96e77f8eec
 
 In today's digital age, managing the daily aspects of pet care can be streamlined through technology. As pet owners ourselves, we recognized the need for a user-friendly application to help manage pet information efficiently. This led to the creation of Fur & Fluff E-Spa, a web application designed to simplify the way pet owners keep track of their pets' details. In this blog post, we'll walk you through the development process, from conception to deployment, and share the challenges and learning experiences along the way.
 
