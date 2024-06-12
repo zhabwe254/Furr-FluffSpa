@@ -6,3 +6,4 @@ Why Fur & Fluff E-Spa?
 
 The idea behind Fur & Fluff E-Spa stemmed from a common problem many pet owners face: the need to manage multiple pets' information, including their names, species, ages, and more. Our goal was to create an intuitive and responsive web application that allows users to register, log in, and manage their pets with ease. We envisioned a platform where pet owners could effortlessly add, update, and delete pet information, ensuring they always have up-to-date records of their furry friends.
 
+![IMG-20240610-WA0020](https://github.com/zhabwe254/Furr-FluffSpa/assets/132429932/c17e6beb-eb36-4601-8a35-568c1850e29c)
