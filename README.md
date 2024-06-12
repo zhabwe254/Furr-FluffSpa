@@ -1,20 +1,5 @@
 Furr-FluffSpa
 
-The presentation will consist of several parts:
-
-A slidedeck made with Google Slides
-Introduction of team members, and each person’s role
-Story of how your project was inspired
-Technology & Architecture
-Core algorithms and code snippet
-Discussion of process, collaboration and timeline
-Challenge(s) overcome
-Live Demo
-Learnings about technical interests as a result of this project
-Time to answer questions from the audience
-Feedback and comments provided by technical staff, possibly alum guests
-The length of time for a presentation will be 18 minutes
-
 
 In today's digital age, managing the daily aspects of pet care can be streamlined through technology. As pet owners ourselves, we recognized the need for a user-friendly application to help manage pet information efficiently. This led to the creation of Fur & Fluff E-Spa, a web application designed to simplify the way pet owners keep track of their pets' details. In this blog post, we'll walk you through the development process, from conception to deployment, and share the challenges and learning experiences along the way.
 
