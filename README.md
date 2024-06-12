@@ -26,15 +26,15 @@ To install and run Furr & Fluff E-Spa locally, follow these steps:
 
 1.Clone the repository:
 
--**git clone https://github.com/zhabwe254/Furr-FluffSpa.git
+- **git clone https://github.com/zhabwe254/Furr-FluffSpa.git
 
 2.Navigate to the project directory:
 
--**cd Furr-FluffSpa
+- **cd Furr-FluffSpa
 
 3.Install Flask and other Python dependencies:
 
--**pip install -r requirements.txt
+- **pip install -r requirements.txt
 
 
 To install and run Furr & Fluff E-Spa locally, follow these steps:
@@ -42,25 +42,25 @@ To install and run Furr & Fluff E-Spa locally, follow these steps:
 1. Clone the repository
    
 ## Flask development server
-   -**python run_furr_fluffspa.py
+   - **python run_furr_fluffspa.py
 
 
 ## Technologies Used
 
 # Frontend:
--**HTML5
--**CSS3
--**JavaScript (ES6+)
--**React.js
+- **HTML5
+- **CSS3
+- **JavaScript (ES6+)
+- **React.js
 
 # Backend:
--**Python
--**Flask
+- **Python
+- **Flask
 
 $ Database:
--**SQLite
--**Authentication:
--**JWT (JSON Web Tokens)
+- **SQLite
+- **Authentication:
+- **JWT (JSON Web Tokens)
 
 In today's digital age, managing the daily aspects of pet care can be streamlined through technology. As pet owners ourselves, we recognized the need for a user-friendly application to help manage pet information efficiently. This led to the creation of Fur & Fluff E-Spa, a web application designed to simplify the way pet owners keep track of their pets' details. In this blog post, we'll walk you through the development process, from conception to deployment, and share the challenges and learning experiences along the way.
 
