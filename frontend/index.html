@@ -3,28 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Furr-FluffSpa</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Fur & Fluff E-Spa</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    /* Merged styles */
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7; /* pale pink */
+      color: #333;
+    }
+
+    header {
+      background-color: #ffe6f2; /* pale pink */
+      padding: 20px;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo img {
+      width: 50%; /* Reduced logo size */
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #007BFF; /* dull blue */
+      font-weight: bold;
+    }
+
+    main {
+      background-color: #e6f7ff; /* pale blue */
+      padding: 50px 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #ffe6f2; /* pale pink */
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 400px;
+      margin: 20px 0;
+    }
+
+    /* Additional styles for the merged sections */
+    #features {
+      background-color: #e6f7ff;
+      padding: 50px 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .feature {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .feature img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .feature h3 {
+      color: #333;
+    }
+
+    .feature p {
+      color: #333;
+    }
+
+    #about {
+      text-align: center;
+      background-color: #ffe6f2;
+      padding: 50px 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .team {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .member {
+      margin: 0 20px;
+    }
+
+    .member h3 {
+      color: #333;
+    }
+
+    .member p {
+      color: #333;
+    }
+
+    .member a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .member a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <header>
+    <div class="logo">
+      <img src="/Users/gideonhabwe/alx/Furr-FluffSpa/frontend/images/logo.jpg" alt="Furr-FluffSpa Logo">
+    </div>
     <nav>
       <ul>
-        <li><a href="#intro">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
       </ul>
     </nav>
   </header>
-  
-  <section id="intro">
-    <div class="cover-image">
-      <h1>Furr-FluffSpa</h1>
-      <p>Your Pet's Favorite Spa</p>
-      <button onclick="window.location.href='https://your-deployed-app-url.com'">Visit App</button>
-    </div>
-  </section>
-  
+
+  <main>
+    <h1>Welcome to Fur & Fluff E-Spa</h1>
+    <p>Manage your pets with ease!</p>
+    <div id="map"></div>
+  </main>
+
   <section id="features">
     <h2>Our Features</h2>
     <div class="feature">
@@ -43,16 +178,16 @@
       <p>Keep track of your spa supplies and grooming products to ensure you never run out.</p>
     </div>
   </section>
-  
+
   <section id="about">
     <h2>About Us</h2>
     <p>Inspired by our love for pets and the desire to create a platform that connects pet owners with grooming services, we built Furr-FluffSpa to be a user-friendly website where pet lovers could find everything they need for their furry friends.</p>
     <p>This project is a Portfolio Project for Holberton School.</p>
     <div class="team">
-      <div class="member">
+<div class="member">
         <h3>Gideon Habwe</h3>
         <p>Front-End Developer</p>
-        <a href=" https://www.linkedin.com/in/gideon-mark-zion-habwe-b93b0274/" target="_blank">LinkedIn</a> |
+        <a href="https://www.linkedin.com/in/gideon-mark-zion-habwe-b93b0274/" target="_blank">LinkedIn</a> |
         <a href="https://github.com/zhabwe254" target="_blank">GitHub</a> |
         <a href="https://twitter.com/zion254" target="_blank">Twitter</a>
       </div>
@@ -64,11 +199,26 @@
         <a href="https://twitter.com/RosaTshepiso" target="_blank">Twitter</a>
       </div>
     </div>
-    <p><a href=" https://github.com/zhabwe254/Furr-FluffSpa” target="_blank">GitHub Repository</a></p>
   </section>
-  
+
   <footer>
-    <p>&copy; 2024 Furr-FluffSpa. All rights reserved.</p>
+    <p>&copy; Fur & Fluff E-Spa</p>
   </footer>
+
+  <script>
+    function initMap() {
+      const location = { lat: -34.397, lng: 150.644 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: location,
+      });
+      const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
+
