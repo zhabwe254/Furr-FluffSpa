@@ -24,5 +24,11 @@ const config = {
     }
 };
 
+// config.js
+
+module.exports = {
+    database: 'mongodb://localhost:27017/furr-fluffspa'
+};
+
 const env = process.env.NODE_ENV || 'development';
 module.exports = config[env];

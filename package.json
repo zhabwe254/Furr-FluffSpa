@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ```json
 {
   "name": "furr-fluff-spa",
@@ -17,5 +18,10 @@
 {
   "scripts": {
     "test": "mocha backend/tests/**/*.js --timeout 10000"
+=======
+{
+  "dependencies": {
+    "cors": "^2.8.5"
+>>>>>>> refs/remotes/origin/main
   }
 }
