@@ -1,4 +1,4 @@
-// customerModel.js
+// customerModels.js
 
 // Schema definition for Customer model
 const mongoose = require('mongoose');
