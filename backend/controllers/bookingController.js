@@ -1,6 +1,6 @@
 // bookingController.js
 
-const Booking = require('../models/bookingModel');
+const Booking = require('./models/bookingModel');
 
 // Controller functions for managing bookings
 exports.getAllBookings = (req, res) => {
