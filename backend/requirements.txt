@@ -1,3 +1,5 @@
+express==^4.17.1
+mongoose==^5.13.0
 subprocess
 HTML
 CSS
