@@ -217,8 +217,18 @@
         map: map,
       });
     }
+
+    // Function to fetch data from the backend
+    function fetchData() {
+      fetch('/api/data')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Call the function to fetch data when the page loads
+    window.onload = fetchData;
   </script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
-
