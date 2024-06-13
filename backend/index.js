@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const userRoutes = require('./app/routes/userRoute');
-const petRoutes = require('./app/routes/petRoute');
-const bookingRoutes = require('./app/routes/bookingRoute');
-const customerRoutes = require('./app/routes/customerRoute');
+const userRoutes = require('./routes/userRoute');
+const petRoutes = require('./routes/petRoute');
+const bookingRoutes = require('./routes/bookingRoute');
+const customerRoutes = require('./routes/customerRoute');
 const connectDB = require('./config/database');
 const config = require('./config/config');
 
