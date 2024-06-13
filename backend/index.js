@@ -7,12 +7,9 @@ const userRoutes = require('./routes/userRoute');
 const petRoutes = require('./routes/petRoute');
 const bookingRoutes = require('./routes/bookingRoute');
 const customerRoutes = require('./routes/customerRoute');
-const connectDB = require('./db/database'); // Updated path to match folder structure
+const connectDB = require('./config/database');
 
 const app = express();
-
-// Connect to the database
-connectDB();
 
 // Enable CORS
 app.use(cors());
@@ -24,6 +21,15 @@ app.use('/api/pets', petRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/customers', customerRoutes);
 
+// Database connection
+const dbUri = process.env.DATABASE_URL;
+if (!dbUri) {
+    console.error('DATABASE_URL is not defined');
+    process.exit(1);
+}
+
+connectDB(dbUri);
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -31,3 +37,4 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
