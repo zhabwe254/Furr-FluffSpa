@@ -1,6 +1,6 @@
 // customerController.js
 
-const Customer = require('../models/customerModel');
+const Customer = require('./models/customerModel');
 
 // Controller functions for managing customers
 exports.getAllCustomers = (req, res) => {
