@@ -8,21 +8,15 @@ const connectDB = require('./config/database');
 const config = require('./config/config');
 
 // Connect to the database
-connectDB(config.db.uri);
-
+mongoose.connect(&#39;mongodb://localhost/furr-fluff-spa&#39;, { useNewUrlParser: true,
+useUnifiedTopology: true });
 // Enable CORS
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
 // Set up routes
-app.use('/api/bookings', bookingController);
-app.use('/api/customers', customerController);
-
+app.use(&#39;/api&#39;, bookingController);
+app.use(&#39;/api&#39;, customerController);
 // Start the server
-const port = config.port;
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
+const port = 3000;
+app.listen(port, () =&gt; {
+console.log(`Server started on port ${port}`);
 });
-
-module.exports = app;
