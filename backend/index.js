@@ -23,6 +23,17 @@ app.use('/api/pets', petRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/customers', customerRoutes);
 
+require('dotenv').config(); // Load environment variables from .env file
+
+const mongoose = require('mongoose');
+
+// Database connection
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+    console.log('Connected to the database');
+});
 // Start the server
 const PORT = config.port || 3000;
 app.listen(PORT, () => {
