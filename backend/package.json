@@ -1,15 +1,16 @@
 {
-&quot;name&quot;: &quot;furr-fluff-spa&quot;,
-&quot;version&quot;: &quot;1.0.0&quot;,
-&quot;dependencies&quot;: {
-&quot;body-parser&quot;: &quot;^1.19.0&quot;,
-&quot;cors&quot;: &quot;^2.8.5&quot;,
-&quot;express&quot;: &quot;^4.17.1&quot;,
-&quot;mongoose&quot;: &quot;^5.11.11&quot;,
-&quot;nodemon&quot;: &quot;^2.0.7&quot;
-},
-
-&quot;scripts&quot;: {
-&quot;start&quot;: &quot;nodemon app.js&quot;
-}
+  "name": "furr-fluffspa",
+  "version": "1.0.0",
+  "description": "Furr FluffSpa Backend API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0"
+  }
 }
