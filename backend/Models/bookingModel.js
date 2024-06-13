@@ -1,10 +1,10 @@
-const mongoose = require(&#39;mongoose&#39;);
+// bookingModel.js
+
+// Schema definition for Booking model
+const mongoose = require('mongoose');
+
 const bookingSchema = new mongoose.Schema({
-customerName: String,
-serviceName: String,
-date: Date,
-time: String,
-status: String
+    // Define booking schema fields
 });
-const Booking = mongoose.model(&#39;Booking&#39;, bookingSchema);
-module.exports = Booking;
+
+module.exports = mongoose.model('Booking', bookingSchema);
