@@ -1,3 +1,5 @@
+require('dotenv').config(); // Load environment variables from .env file
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -6,8 +8,6 @@ const petRoutes = require('./routes/petRoute');
 const bookingRoutes = require('./routes/bookingRoute');
 const customerRoutes = require('./routes/customerRoute');
 const connectDB = require('./db/database'); // Updated path to match folder structure
-
-require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
 
