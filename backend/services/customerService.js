@@ -1,19 +1,24 @@
-const Customer = require(&#39;../models/customerModel&#39;);
-class CustomerService {
-async getAllCustomers() {
-return Customer.find().exec();
-}
-async getCustomerById(id) {
-return Customer.findById(id).exec();
-}
-async createCustomer(customer) {
-return Customer.create(customer);
-}
-async updateCustomer(id, customer) {
-return Customer.findByIdAndUpdate(id, customer, { new: true }).exec();
-}
-async deleteCustomer(id) {
-return Customer.findByIdAndRemove(id).exec();
-}
-}
-module.exports = CustomerService;
+/ customerService.js
+
+// Service functions for interacting with Customer model
+const Customer = require('../models/customerModel');
+
+exports.getAllCustomers = async () => {
+    // Logic to fetch all customers from the database
+};
+
+exports.createCustomer = async (customerData) => {
+    // Logic to create a new customer in the database
+};
+
+exports.getCustomerById = async (id) => {
+    // Logic to fetch a customer by ID from the database
+};
+
+exports.updateCustomer = async (id, updatedData) => {
+    // Logic to update a customer in the database
+};
+
+exports.deleteCustomer = async (id) => {
+    // Logic to delete a customer from the database
+};
