@@ -1,4 +1,4 @@
-// bookingModel.js
+// bookingModels.js
 
 // Schema definition for Booking model
 const mongoose = require('mongoose');
