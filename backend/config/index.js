@@ -1,6 +1,5 @@
-module.exports = {
-    db: {
-        uri: process.env.mongodb+srv://gmarkd:GKpmZZ9A5wJGT3lB@cluster0.jiyzrgy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-    },
-    port: process.env.PORT || 3000
-};
+import dotenv from 'dotenv';
+dotenv.config();
+
+const mongoose = require('mongoose');
+mongoose.connect(process.env.DATABASE_URl, { useNewUrlParser: true, useUnifiedTopology: true });
