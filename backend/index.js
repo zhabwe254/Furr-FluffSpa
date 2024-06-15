@@ -1,40 +1,33 @@
-require('dotenv').config(); // Load environment variables from .env file
-
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const userRoutes = require('./routes/userRoute');
-const petRoutes = require('./routes/petRoute');
-const bookingRoutes = require('./routes/bookingRoute');
-const customerRoutes = require('./routes/customerRoute');
-const connectDB = require('./config/database');
-
 const app = express();
+const mongoose = require('mongoose');
 
-// Enable CORS
-app.use(cors());
-app.use(bodyParser.json());
+// Update MongoDB URL to use mongodb+srv protocol
+const mongoUrl = 'mongodb+srv://gmarkd:GKpmZZ9A5wJGT3lB@cluster0.jiyzrgy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
-// Set up routes
-app.use('/api/users', userRoutes);
-app.use('/api/pets', petRoutes);
-app.use('/api/bookings', bookingRoutes);
-app.use('/api/customers', customerRoutes);
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Database connection
-const dbUri = process.env.DATABASE_URL;
-if (!dbUri) {
-    console.error('DATABASE_URL is not defined');
-    process.exit(1);
-}
+const db = mongoose.connection;
 
-connectDB(dbUri);
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+db.on('error', (err) => {
+  console.error(err);
 });
 
-module.exports = app;
+db.once('open', () => {
+  console.log('Connected to the database');
 
+  // Create index using createIndexes method
+  const myCollection = mongoose.connection.collection('mycollection');
+  myCollection.createIndexes({ fieldName: 1 }, { unique: true }, (err, result) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(result);
+    }
+  });
+});
+
+const port = process.env.port || 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
