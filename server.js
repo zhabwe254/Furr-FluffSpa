@@ -20,33 +20,32 @@ app.use(express.static(path.join(__dirname, 'frontend')));
 
 // API routes
 app.post('/api/register', async (req, res) => {
-  try {
-    const { username, password } = req.body;
-    const newUser = new User({ username, password });
-    await newUser.save();
-    res.status(201).json({ message: 'User registered successfully' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Failed to register user' });
+  const { username, password } = req.body;
+  const existingUser = await User.findOne({ username });
+  if (existingUser) {
+    return res.status(400).json({ message: 'User already exists' });
   }
+  const user = new User({ username, password });
+  await user.save();
+  res.status(201).json({ message: 'User registered successfully' });
 });
 
 app.post('/api/login', async (req, res) => {
-  try {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username, password }).exec();
-    if (user) {
-      res.json({ message: 'Login successful' });
-    } else {
-      res.status(401).json({ message: 'Invalid credentials' });
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Failed to login' });
+  const { username, password } = req.body;
+  const user = await User.findOne({ username, password });
+  if (!user) {
+    return res.status(400).json({ message: 'Invalid credentials' });
   }
+  res.status(200).json({ message: 'Login successful' });
 });
 
-// Serve the main HTML file for all other routes
+app.post('/api/book-appointment', (req, res) => {
+  const { date, time } = req.body;
+  // Save appointment details to database (not implemented in this example)
+  res.status(200).json({ message: 'Appointment booked successfully' });
+});
+
+// Serve the main HTML files
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });

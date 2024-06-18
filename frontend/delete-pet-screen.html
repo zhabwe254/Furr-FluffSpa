@@ -23,10 +23,11 @@
   </header>
 
   <main>
-    <h1>Delete a Pet</h1>
-    <form id="deletePetForm">
-      <label for="petId">Pet ID:</label>
-      <input type="text" id="petId" name="petId" required>
+    <h1>Delete Pet</h1>
+    <form id="delete-pet-form">
+      <label for="pet-id">Pet ID:</label>
+      <input type="text" id="pet-id" name="pet-id" required>
+      
       <button type="submit">Delete Pet</button>
     </form>
   </main>
@@ -35,17 +36,6 @@
     <p>&copy; Fur & Fluff E-Spa</p>
   </footer>
 
-  <script>
-    document.getElementById('deletePetForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const petId = document.getElementById('petId').value;
-      fetch(`/api/delete-pet/${petId}`, {
-        method: 'DELETE'
-      })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Error:', error));
-    });
-  </script>
+  <script src="/js/delete-pet.js"></script>
 </body>
 </html>
