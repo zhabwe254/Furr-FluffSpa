@@ -14,8 +14,10 @@
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
+        <li><a href="/login.html">Login</a></li>
+        <li><a href="/registration.html">Register</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -51,7 +53,11 @@
       });
 
       const data = await response.json();
-      document.getElementById('message').textContent = data.message;
+      if (response.ok) {
+        window.location.href = '/dashboard.html';
+      } else {
+        document.getElementById('message').textContent = data.message;
+      }
     });
   </script>
 </body>
