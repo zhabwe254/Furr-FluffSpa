@@ -1,42 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Appointments</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fur & Fluff E-Spa</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    /* Merged styles */
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7; /* pale pink */
+      color: #333;
+    }
+
+    header {
+      background-color: #ffe6f2; /* pale pink */
+      padding: 20px;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo img {
+      width: 50%; /* Reduced logo size */
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #007BFF; /* dull blue */
+      font-weight: bold;
+    }
+
+    main {
+      background-color: #e6f7ff; /* pale blue */
+      padding: 50px 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #ffe6f2; /* pale pink */
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 400px;
+      margin: 20px 0;
+    }
+
+    /* Additional styles for the merged sections */
+    #features {
+      background-color: #e6f7ff;
+      padding: 50px 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .feature {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .feature img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .feature h3 {
+      color: #333;
+    }
+
+    .feature p {
+      color: #333;
+    }
+
+    #about {
+      text-align: center;
+      background-color: #ffe6f2;
+      padding: 50px 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .team {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .member {
+      margin: 0 20px;
+    }
+
+    .member h3 {
+      color: #333;
+    }
+
+    .member p {
+      color: #333;
+    }
+
+    .member a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .member a:hover {
+      text-decoration: underline;
+    }
+
+    .appointment-button {
+      background-color: #007BFF; /* dull blue */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .appointment-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo-container">
-            <img src="images/logo.jpg" alt="Furr-FluffSpa Logo" class="logo">
-        </div>
-        <h1>Pet Appointments</h1>
-        <p>Schedule your pet's grooming appointment below.</p>
-        <form id="appointmentForm">
-            <label for="petName">Pet Name:</label>
-            <input type="text" id="petName" name="petName" required>
-            
-            <label for="service">Service:</label>
-            <select id="service" name="service" required>
-                <option value="grooming">Grooming</option>
-                <option value="spa">Spa</option>
-                <option value="checkup">Checkup</option>
-            </select>
-            
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-            
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required>
-            
-            <button type="submit">Book Appointment</button>
-        </form>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+  <header>
+    <div class="logo">
+      <img src="/Users/gideonhabwe/alx/Furr-FluffSpa/frontend/images/logo.jpg" alt="Furr-FluffSpa Logo">
     </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login.html">Login</a></li>
+        <li><a href="/registration.html">Register</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to Fur & Fluff E-Spa</h1>
+    <p>Manage your pets with ease!</p>
+    <div id="map"></div>
+  </main>
+
+  <section id="features">
+    <h2>Our Features</h2>
+    <div class="feature">
+      <img src="/Users/gideonhabwe/alx/Furr-FluffSpa/frontend/images/feature1.jpg" alt="Feature 1">
+      <h3>Online Appointment Booking</h3>
+      <p>Schedule appointments at your convenience and reduce administrative work.</p>
+    </div>
+    <div class="feature">
+      <img src="/Users/gideonhabwe/alx/Furr-FluffSpa/frontend/images/feature2.jpg" alt="Feature 2">
+      <h3>Customer Management System</h3>
+      <p>Track customer information, appointment history, and pet details for personalized service.</p>
+    </div>
+    <div class="feature">
+      <img src="/Users/gideonhabwe/alx/Furr-FluffSpa/frontend/images/feature3.jpg" alt="Feature 3">
+      <h3>Inventory Management</h3>
+      <p>Keep track of your spa supplies and grooming products to ensure you never run out.</p>
+    </div>
+    <button class="appointment-button" onclick="window.location.href='/appointments.html'">Book an Appointment</button>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Inspired by our love for pets and the desire to create a platform that connects pet owners with grooming services, we built Furr-FluffSpa to be a user-friendly website where pet lovers could find everything they need for their furry friends.</p>
+    <p>This project is a Portfolio Project for Holberton School.</p>
+    <div class="team">
+<div class="member">
+        <h3>Gideon Habwe</h3>
+        <p>Front-End Developer</p>
+        <a href="https://www.linkedin.com/in/gideon-mark-zion-habwe-b93b0274/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/zhabwe254" target="_blank">GitHub</a> |
+        <a href="https://twitter.com/zion254" target="_blank">Twitter</a>
+      </div>
+      <div class="member">
+        <h3>Tshepiso Mafuyeka</h3>
+        <p>Back-End Engineer</p>
+        <a href="https://linkedin.com/in/tshepiso-mafuyeka-ab65a5279" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/tshepisomafuyeka" target="_blank">GitHub</a> |
+        <a href="https://twitter.com/RosaTshepiso" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; Fur & Fluff E-Spa</p>
+  </footer>
+
+  <script>
+    function initMap() {
+      const location = { lat: -34.397, lng: 150.644 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: location,
+      });
+      const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+      });
+    }
+
+    // Function to fetch data from the backend
+    function fetchData() {
+      fetch('/api/data')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Call the function to fetch data when the page loads
+    window.onload = fetchData;
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

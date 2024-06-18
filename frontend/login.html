@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
+  <title>Login</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -21,13 +21,13 @@
   </header>
 
   <main>
-    <h1>Register</h1>
-    <form id="registerForm">
+    <h1>Login</h1>
+    <form id="loginForm">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
-      <button type="submit">Register</button>
+      <button type="submit">Login</button>
     </form>
     <div id="message"></div>
   </main>
@@ -37,12 +37,12 @@
   </footer>
 
   <script>
-    document.getElementById('registerForm').addEventListener('submit', async function(event) {
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
       event.preventDefault();
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
 
-      const response = await fetch('/api/register', {
+      const response = await fetch('/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

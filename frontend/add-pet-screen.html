@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Pet</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-        }
-
-        h2 {
-            color: #007BFF; /* dull blue */
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin: 15px 0 5px;
-            text-align: left;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #007BFF; /* dull blue */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Pet - Fur & Fluff E-Spa</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div id="add-pet-screen">
-        <h2>Add Pet</h2>
-        <form id="add-pet-form">
-            <div>
-                <label for="pet-name">Name:</label>
-                <input type="text" id="pet-name" required>
-            </div>
-            <div>
-                <label for="pet-species">Species:</label>
-                <input type="text" id="pet-species" required>
-            </div>
-            <div>
-                <label for="pet-age">Age:</label>
-                <input type="number" id="pet-age" required>
-            </div>
-            <button type="submit">Add Pet</button>
-        </form>
+  <header>
+    <div class="logo">
+      <img src="/images/logo.jpg" alt="Furr-FluffSpa Logo">
     </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login.html">Login</a></li>
+        <li><a href="/registration.html">Register</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Add a New Pet</h1>
+    <form id="addPetForm">
+      <label for="name">Pet Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="species">Species:</label>
+      <input type="text" id="species" name="species" required>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+      <button type="submit">Add Pet</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; Fur & Fluff E-Spa</p>
+  </footer>
+
+  <script>
+    document.getElementById('addPetForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const petData = {
+        name: document.getElementById('name').value,
+        species: document.getElementById('species').value,
+        age: document.getElementById('age').value,
+      };
+      fetch('/api/add-pet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(petData)
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
+    });
+  </script>
 </body>
 </html>
