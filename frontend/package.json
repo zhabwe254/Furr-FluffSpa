@@ -1,8 +1,18 @@
 {
+  "name": "your-frontend-app",
+  "version": "1.0.0",
+  "description": "Your frontend application description",
+  "main": "index.js",
   "scripts": {
+    "start": "react-scripts start",
     "test": "mocha backend/tests/**/*.js --timeout 10000"
   },
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.7.2"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
   }
 }
