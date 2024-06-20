@@ -1,16 +1,23 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-// Update MongoDB URL to use mongodb+srv protocol
-const mongoUrl = 'mongodb+srv://gmarkd:GKpmZZ9A5wJGT3lB@cluster0.jiyzrgy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+// Load environment variables from .env file
+dotenv.config();
 
+const app = express();
+app.use(express.json());
+
+// MongoDB connection string from environment variables
+const mongoUrl = process.env.MONGO_URL || 'your_default_mongo_url_here';
+
+// Connect to MongoDB
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 
 db.on('error', (err) => {
-  console.error(err);
+  console.error('Database connection error:', err);
 });
 
 db.once('open', () => {
@@ -18,16 +25,21 @@ db.once('open', () => {
 
   // Create index using createIndexes method
   const myCollection = mongoose.connection.collection('mycollection');
-  myCollection.createIndexes({ fieldName: 1 }, { unique: true }, (err, result) => {
+  myCollection.createIndex({ fieldName: 1 }, { unique: true }, (err, result) => {
     if (err) {
-      console.error(err);
+      console.error('Index creation error:', err);
     } else {
-      console.log(result);
+      console.log('Index created:', result);
     }
   });
 });
 
-const port = process.env.port || 3001;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+});
+
+// Add a simple route to verify the server is working
+app.get('/', (req, res) => {
+  res.send('Server is running');
 });
